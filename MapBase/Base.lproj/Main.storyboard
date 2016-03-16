@@ -26,7 +26,7 @@
                                             <rect key="frame" x="233" y="0.0" width="30" height="30"/>
                                             <state key="normal" title="List"/>
                                             <connections>
-                                                <segue destination="gY8-ML-CZh" kind="show" id="Adl-YJ-rTr"/>
+                                                <segue destination="gY8-ML-CZh" kind="show" identifier="bookmarkToMapListSegue" id="Adl-YJ-rTr"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -38,7 +38,13 @@
                             <outlet property="delegate" destination="wyS-Is-57E" id="pVh-oy-T5w"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="0Nw-PT-F3k"/>
+                    <navigationItem key="navigationItem" id="0Nw-PT-F3k">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0qi-Uh-eWP">
+                            <connections>
+                                <segue destination="9kL-DQ-gKa" kind="presentation" identifier="bookmarkToAddMapSegue" id="dJb-td-WN8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="5UD-kh-jKQ" kind="show" identifier="bookmarkToMapSegue" id="29e-aQ-NDZ"/>
                     </connections>
@@ -59,22 +65,44 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="4GQ-Vl-IrQ">
                                 <connections>
-                                    <segue destination="QNq-yg-TEd" kind="presentation" id="ap6-le-OD9"/>
+                                    <segue destination="QNq-yg-TEd" kind="show" identifier="mapToAddMarkerSegue" id="ap6-le-OD9"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="search" id="4BP-Xr-HA7"/>
                             <barButtonItem title="List" id="FJ0-r6-Vqa">
                                 <connections>
-                                    <segue destination="gY8-ML-CZh" kind="show" id="RQn-7h-MfW"/>
+                                    <segue destination="8sG-Va-g90" kind="show" identifier="mapToMapListSegue" id="YJ1-xQ-rRQ"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="1An-aa-SXs" kind="presentation" identifier="mapToDetailSegue" id="Hwe-0s-DB5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgr-lB-zmq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3376" y="190"/>
+            <point key="canvasLocation" x="3469" y="67"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cma-eX-wdd">
+            <objects>
+                <viewController id="1An-aa-SXs" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cmp-82-Twb"/>
+                        <viewControllerLayoutGuide type="bottom" id="1SS-PO-oc7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IcX-rv-p1q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AVY-Ve-uId" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4211" y="-153"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="XF8-LE-czl">
@@ -87,12 +115,49 @@
                     <view key="view" contentMode="scaleToFill" id="Uzy-Ky-M2E">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDW-aO-Bq8">
+                                <rect key="frame" x="252" y="393" width="50" height="30"/>
+                                <state key="normal" title="Nearby"/>
+                                <connections>
+                                    <segue destination="zGE-eM-kPT" kind="show" identifier="addMarkerToNearbySegue" id="KFu-nn-2eh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTf-i2-VjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3917" y="570"/>
+            <point key="canvasLocation" x="3836" y="723"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="onQ-Qu-z9h">
+            <objects>
+                <tableViewController id="zGE-eM-kPT" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lvt-9w-m5Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7Qu-nM-4IV">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Qu-nM-4IV" id="xtE-wW-akZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zGE-eM-kPT" id="DOG-77-AUh"/>
+                            <outlet property="delegate" destination="zGE-eM-kPT" id="Ujp-FK-oSP"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kgf-e6-99r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4031" y="1483"/>
         </scene>
         <!--MapBase-->
         <scene sceneID="EoH-iX-bwm">
@@ -114,7 +179,7 @@
                                             <rect key="frame" x="243" y="0.0" width="30" height="30"/>
                                             <state key="normal" title="List"/>
                                             <connections>
-                                                <segue destination="gY8-ML-CZh" kind="show" id="X7c-Yb-mZR"/>
+                                                <segue destination="gY8-ML-CZh" kind="show" identifier="mainToMapListSegue" id="X7c-Yb-mZR"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -126,7 +191,13 @@
                             <outlet property="delegate" destination="NPK-2B-5yw" id="jP8-9m-lSu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="MapBase" id="Reh-39-ZlG"/>
+                    <navigationItem key="navigationItem" title="MapBase" id="Reh-39-ZlG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZBZ-dn-Uzp">
+                            <connections>
+                                <segue destination="9kL-DQ-gKa" kind="presentation" identifier="mainToAddMapSegue" id="VQy-ZW-xyH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="5UD-kh-jKQ" kind="show" identifier="mainToMapSegue" id="dXt-Yk-Ef0"/>
                     </connections>
@@ -155,7 +226,7 @@
                                             <rect key="frame" x="237" y="7" width="30" height="30"/>
                                             <state key="normal" title="List"/>
                                             <connections>
-                                                <segue destination="gY8-ML-CZh" kind="show" id="sd1-wa-aHa"/>
+                                                <segue destination="gY8-ML-CZh" kind="show" identifier="publicToMapListSegue" id="sd1-wa-aHa"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -167,7 +238,13 @@
                             <outlet property="delegate" destination="1Nx-zr-LgX" id="RdD-rN-c2F"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="PtY-tA-dQ1"/>
+                    <navigationItem key="navigationItem" id="PtY-tA-dQ1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sXd-UL-dDt">
+                            <connections>
+                                <segue destination="9kL-DQ-gKa" kind="presentation" identifier="publicToAddMapSegue" id="6yt-dd-EH3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="5UD-kh-jKQ" kind="show" identifier="publicToMapSegue" id="3Mc-cY-qTr"/>
                     </connections>
@@ -175,6 +252,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPh-cl-85J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1770" y="1091"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qwa-fA-eOS">
+            <objects>
+                <viewController id="9kL-DQ-gKa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KHL-Gh-6rn"/>
+                        <viewControllerLayoutGuide type="bottom" id="O3c-lV-Q7F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Qg-dS-eun">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mwL-O1-p1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2463" y="-454"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="OHa-AF-lqs">
@@ -203,13 +298,13 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="qIW-34-Dpi">
                                 <connections>
-                                    <segue destination="QNq-yg-TEd" kind="presentation" id="74i-XF-m6U"/>
+                                    <segue destination="QNq-yg-TEd" kind="show" identifier="mapListToAddMarkerSegue" id="74i-XF-m6U"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="search" id="3c6-i7-xPC"/>
                             <barButtonItem title="Map" id="LgZ-6N-Cm7">
                                 <connections>
-                                    <segue destination="rh9-hr-A9C" kind="show" id="aps-6E-P2h"/>
+                                    <segue destination="rh9-hr-A9C" kind="show" identifier="mapListToMapSegue" id="aps-6E-P2h"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -217,7 +312,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cfs-ze-HLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3354" y="1082"/>
+            <point key="canvasLocation" x="3007" y="1134"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="FSD-5F-tAa">
@@ -312,7 +407,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1c-Yt-f3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2475" y="133"/>
+            <point key="canvasLocation" x="2969" y="67"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="M3l-LL-Qn0">
@@ -331,13 +426,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MaU-q1-cmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2615" y="1212"/>
+            <point key="canvasLocation" x="2557" y="1134"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="29e-aQ-NDZ"/>
+        <segue reference="3Mc-cY-qTr"/>
+        <segue reference="sd1-wa-aHa"/>
+        <segue reference="VQy-ZW-xyH"/>
         <segue reference="aps-6E-P2h"/>
-        <segue reference="RQn-7h-MfW"/>
+        <segue reference="YJ1-xQ-rRQ"/>
         <segue reference="ap6-le-OD9"/>
     </inferredMetricsTieBreakers>
 </document>
