@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB0F1B721C9B688E00C8126B /* MapListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0F1B711C9B688E00C8126B /* MapListTableViewController.swift */; };
+		AC02C26D1C9B6C16004BEE84 /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02C26C1C9B6C16004BEE84 /* MapMarker.swift */; };
 		ACDA410E1C98CA690076B407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDA410D1C98CA690076B407 /* AppDelegate.swift */; };
 		ACDA41101C98CA690076B407 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDA410F1C98CA690076B407 /* ViewController.swift */; };
 		ACDA41131C98CA690076B407 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACDA41111C98CA690076B407 /* Main.storyboard */; settings = {ASSET_TAGS = (AAAAAA, ); }; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		AB0F1B711C9B688E00C8126B /* MapListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListTableViewController.swift; sourceTree = "<group>"; };
+		AC02C26C1C9B6C16004BEE84 /* MapMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapMarker.swift; sourceTree = SOURCE_ROOT; };
 		ACDA410A1C98CA690076B407 /* MapBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACDA410D1C98CA690076B407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACDA410F1C98CA690076B407 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC02C26B1C9B6BFD004BEE84 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC02C26C1C9B6C16004BEE84 /* MapMarker.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		ACDA41011C98CA690076B407 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 		ACDA410C1C98CA690076B407 /* MapBase */ = {
 			isa = PBXGroup;
 			children = (
+				AC02C26B1C9B6BFD004BEE84 /* Models */,
 				ACDA410D1C98CA690076B407 /* AppDelegate.swift */,
 				AB0F1B711C9B688E00C8126B /* MapListTableViewController.swift */,
 				ACDA410F1C98CA690076B407 /* ViewController.swift */,
@@ -264,6 +275,7 @@
 			files = (
 				ACDA41101C98CA690076B407 /* ViewController.swift in Sources */,
 				AB0F1B721C9B688E00C8126B /* MapListTableViewController.swift in Sources */,
+				AC02C26D1C9B6C16004BEE84 /* MapMarker.swift in Sources */,
 				ACDA410E1C98CA690076B407 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
