@@ -9,8 +9,9 @@
 import UIKit
 
 
-
 class MapListTableViewController: UITableViewController {
+    
+    var arrayMapTeste: [String]=["Chapeus", "Botas", "Relógios", "Família", "Bolsas", "Casa de Massagem"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,15 +30,21 @@ class MapListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return  arrayMapTeste.count
     }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellId", forIndexPath: indexPath) as UITableViewCell
+        let listMaps = self.arrayMapTeste[indexPath.row]
+        cell.textLabel?.text = listMaps
+        return cell
+    }
+    
+    
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
