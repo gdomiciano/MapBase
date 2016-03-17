@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		ACDA410E1C98CA690076B407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDA410D1C98CA690076B407 /* AppDelegate.swift */; };
 		ACDA41101C98CA690076B407 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDA410F1C98CA690076B407 /* ViewController.swift */; };
-		ACDA41131C98CA690076B407 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACDA41111C98CA690076B407 /* Main.storyboard */; };
+		ACDA41131C98CA690076B407 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACDA41111C98CA690076B407 /* Main.storyboard */; settings = {ASSET_TAGS = (AAAAAA, ); }; };
 		ACDA41151C98CA690076B407 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACDA41141C98CA690076B407 /* Assets.xcassets */; };
 		ACDA41181C98CA690076B407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACDA41161C98CA690076B407 /* LaunchScreen.storyboard */; };
 		ACDA41231C98CA690076B407 /* MapBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDA41221C98CA690076B407 /* MapBaseTests.swift */; };
@@ -187,6 +187,9 @@
 		ACDA41021C98CA690076B407 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					AAAAAA,
+				);
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Map Base 5";
@@ -484,6 +487,7 @@
 				ACDA41341C98CA690076B407 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACDA41351C98CA690076B407 /* Build configuration list for PBXNativeTarget "MapBaseTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +496,7 @@
 				ACDA41371C98CA690076B407 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACDA41381C98CA690076B407 /* Build configuration list for PBXNativeTarget "MapBaseUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +505,7 @@
 				ACDA413A1C98CA690076B407 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

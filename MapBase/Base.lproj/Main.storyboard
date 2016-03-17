@@ -6,10 +6,10 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Table Favourite maps-->
         <scene sceneID="leS-ZZ-RI2">
             <objects>
-                <tableViewController id="wyS-Is-57E" sceneMemberID="viewController">
+                <tableViewController title="Table Favourite maps" id="wyS-Is-57E" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="j6b-BI-lQl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,12 +51,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GgJ-6W-Wcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1770" y="521"/>
+            <point key="canvasLocation" x="1874" y="257"/>
         </scene>
-        <!--View Controller-->
+        <!--Itens in Map-->
         <scene sceneID="jVM-rm-qwV">
             <objects>
-                <viewController id="rh9-hr-A9C" sceneMemberID="viewController">
+                <viewController title="Itens in Map" id="rh9-hr-A9C" sceneMemberID="viewController">
                     <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="laV-n4-KF0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -83,12 +83,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgr-lB-zmq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3469" y="67"/>
+            <point key="canvasLocation" x="3613" y="257"/>
         </scene>
-        <!--View Controller-->
+        <!--Marker Detail-->
         <scene sceneID="cma-eX-wdd">
             <objects>
-                <viewController id="1An-aa-SXs" sceneMemberID="viewController">
+                <viewController title="Marker Detail" id="1An-aa-SXs" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cmp-82-Twb"/>
                         <viewControllerLayoutGuide type="bottom" id="1SS-PO-oc7"/>
@@ -102,12 +102,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVY-Ve-uId" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4211" y="-153"/>
+            <point key="canvasLocation" x="4391" y="-941"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Marker-->
         <scene sceneID="XF8-LE-czl">
             <objects>
-                <viewController id="QNq-yg-TEd" sceneMemberID="viewController">
+                <viewController title="Add Marker" id="QNq-yg-TEd" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AQZ-6F-p2U"/>
                         <viewControllerLayoutGuide type="bottom" id="lb6-MP-gZn"/>
@@ -129,12 +129,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTf-i2-VjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3836" y="723"/>
+            <point key="canvasLocation" x="4391" y="257"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Add by Nearby-->
         <scene sceneID="onQ-Qu-z9h">
             <objects>
-                <tableViewController id="zGE-eM-kPT" sceneMemberID="viewController">
+                <tableViewController title="Add by Nearby" id="zGE-eM-kPT" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lvt-9w-m5Z">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,12 +157,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kgf-e6-99r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4031" y="1483"/>
+            <point key="canvasLocation" x="4391" y="1427"/>
         </scene>
-        <!--MapBase-->
+        <!--Table My Maps-->
         <scene sceneID="EoH-iX-bwm">
             <objects>
-                <tableViewController id="NPK-2B-5yw" sceneMemberID="viewController">
+                <tableViewController title="Table My Maps" id="NPK-2B-5yw" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="348-xy-3HD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,12 +204,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDV-e1-zgZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1770" y="-37"/>
+            <point key="canvasLocation" x="1854" y="-941"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Table Public Maps-->
         <scene sceneID="FE4-Zj-5hb">
             <objects>
-                <tableViewController id="1Nx-zr-LgX" sceneMemberID="viewController">
+                <tableViewController title="Table Public Maps" id="1Nx-zr-LgX" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QB7-8v-NFm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -251,12 +251,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPh-cl-85J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1770" y="1091"/>
+            <point key="canvasLocation" x="1874" y="1427"/>
         </scene>
-        <!--View Controller-->
+        <!--Form Add Map-->
         <scene sceneID="qwa-fA-eOS">
             <objects>
-                <viewController id="9kL-DQ-gKa" sceneMemberID="viewController">
+                <viewController title="Form Add Map" id="9kL-DQ-gKa" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KHL-Gh-6rn"/>
                         <viewControllerLayoutGuide type="bottom" id="O3c-lV-Q7F"/>
@@ -269,12 +269,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mwL-O1-p1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2463" y="-454"/>
+            <point key="canvasLocation" x="2949" y="-941"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Itens in List-->
         <scene sceneID="OHa-AF-lqs">
             <objects>
-                <tableViewController id="8sG-Va-g90" sceneMemberID="viewController">
+                <tableViewController title="Itens in List" id="8sG-Va-g90" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SvZ-cu-903">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -312,12 +312,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cfs-ze-HLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3007" y="1134"/>
+            <point key="canvasLocation" x="3613" y="1427"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Container das Listas-->
         <scene sceneID="FSD-5F-tAa">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Jog-bd-0HK" sceneMemberID="viewController">
+                <tabBarController title="Container das Listas" automaticallyAdjustsScrollViewInsets="NO" id="Jog-bd-0HK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="VSv-r8-ZRd">
@@ -332,12 +332,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmF-JK-pJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="655" y="657"/>
+            <point key="canvasLocation" x="27" y="257"/>
         </scene>
-        <!--Item-->
+        <!--Navigation My Maps-->
         <scene sceneID="DCY-M7-JDO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vgo-p1-8zB" sceneMemberID="viewController">
+                <navigationController title="Navigation My Maps" automaticallyAdjustsScrollViewInsets="NO" id="Vgo-p1-8zB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="iTe-xm-KLw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jge-AB-hqq">
@@ -351,12 +351,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xuy-f9-pvm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="-37"/>
+            <point key="canvasLocation" x="1218" y="-941"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Favourite maps-->
         <scene sceneID="r24-wx-QXk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xac-bS-2zj" sceneMemberID="viewController">
+                <navigationController title="Navigation Favourite maps" automaticallyAdjustsScrollViewInsets="NO" id="Xac-bS-2zj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="tIL-Tx-4eF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7DA-fc-TS3">
@@ -370,12 +370,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WiP-61-eLS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="521"/>
+            <point key="canvasLocation" x="1218" y="257"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Public Maps-->
         <scene sceneID="yex-p2-wrx">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X4s-Sl-THs" sceneMemberID="viewController">
+                <navigationController title="Navigation Public Maps" automaticallyAdjustsScrollViewInsets="NO" id="X4s-Sl-THs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="NxY-Jd-zjj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rfy-M2-ZMf">
@@ -389,12 +389,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7dZ-RW-ezU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="1091"/>
+            <point key="canvasLocation" x="1218" y="1427"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation to Map-->
         <scene sceneID="6HQ-QY-ST3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5UD-kh-jKQ" sceneMemberID="viewController">
+                <navigationController title="Navigation to Map" automaticallyAdjustsScrollViewInsets="NO" id="5UD-kh-jKQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DkZ-xd-Z7G">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -407,12 +407,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1c-Yt-f3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2969" y="67"/>
+            <point key="canvasLocation" x="2949" y="257"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation to List-->
         <scene sceneID="M3l-LL-Qn0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gY8-ML-CZh" sceneMemberID="viewController">
+                <navigationController title="Navigation to List" automaticallyAdjustsScrollViewInsets="NO" id="gY8-ML-CZh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YCX-7u-5Lv">
@@ -426,15 +426,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MaU-q1-cmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2557" y="1134"/>
+            <point key="canvasLocation" x="2949" y="1427"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3Mc-cY-qTr"/>
         <segue reference="sd1-wa-aHa"/>
-        <segue reference="VQy-ZW-xyH"/>
-        <segue reference="aps-6E-P2h"/>
+        <segue reference="6yt-dd-EH3"/>
+        <segue reference="3Mc-cY-qTr"/>
+        <segue reference="74i-XF-m6U"/>
         <segue reference="YJ1-xQ-rRQ"/>
-        <segue reference="ap6-le-OD9"/>
+        <segue reference="aps-6E-P2h"/>
     </inferredMetricsTieBreakers>
 </document>
