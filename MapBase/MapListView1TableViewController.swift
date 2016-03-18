@@ -24,7 +24,26 @@ class MapListView1TableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         var myRootRef = Firebase(url:"https://boiling-fire-3533.firebaseio.com")
-        myRootRef.setValue("MapBase Aula1 Public Table")
+        // myRootRef.setValue("MapBase Aula1 Public Table")
+        
+        myRootRef.observeEventType(.Value, withBlock: {
+            snapshot in
+            print("\(snapshot.key) -> \(snapshot.value)")
+        })
+        
+//        var casadochapeu = ["lat": "-23.342", "lon": "-45.4387834", "name":"Casa do Chapéu", "address":"Av. Lins 1222"]
+//        var chapelariamaluca = ["lat": "-24.342", "lon": "-46.4387834", "name":"Chapelaria Maluca", "address":"Av. Lins 2221"]
+//        
+//        var arrayMarkers: [[String:String]] = [[String:String]]()
+//        
+//        arrayMarkers.append(casadochapeu)
+//        arrayMarkers.append(chapelariamaluca)
+//        
+//        var usersRef = myRootRef.childByAppendingPath("markers")
+        
+//        usersRef.setValue(arrayMarkers)
+        
+        
         
     }
 
