@@ -6,8 +6,7 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		AB0F1B721C9B688E00C8126B /* MapListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0F1B711C9B688E00C8126B /* MapListTableViewController.swift */; };
+/* Begin PBXBuildFile section */		AB0F1B721C9B688E00C8126B /* MapListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0F1B711C9B688E00C8126B /* MapListTableViewController.swift */; };
 		AB651D1F1C9B7C0500312A93 /* MapListView1TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB651D1E1C9B7C0500312A93 /* MapListView1TableViewController.swift */; };
 		AB651D211C9B7C1300312A93 /* MapListView2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB651D201C9B7C1300312A93 /* MapListView2TableViewController.swift */; };
 		AC02C26D1C9B6C16004BEE84 /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02C26C1C9B6C16004BEE84 /* MapMarker.swift */; };
@@ -19,6 +18,12 @@
 		ACDA41181C98CA690076B407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACDA41161C98CA690076B407 /* LaunchScreen.storyboard */; };
 		ACDA41231C98CA690076B407 /* MapBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDA41221C98CA690076B407 /* MapBaseTests.swift */; };
 		ACDA412E1C98CA690076B407 /* MapBaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDA412D1C98CA690076B407 /* MapBaseUITests.swift */; };
+		ACDD37991C9B6FA000FA5518 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD37981C9B6FA000FA5518 /* libicucore.tbd */; };
+		ACDD379B1C9B6FAF00FA5518 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD379A1C9B6FAF00FA5518 /* libc++.tbd */; };
+		ACDD379D1C9B6FC200FA5518 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD379C1C9B6FC200FA5518 /* CFNetwork.framework */; };
+		ACDD379F1C9B6FCA00FA5518 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD379E1C9B6FCA00FA5518 /* Security.framework */; };
+		ACDD37A11C9B6FD500FA5518 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD37A01C9B6FD500FA5518 /* SystemConfiguration.framework */; };
+		ACDD37A31C9B705E00FA5518 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD37A21C9B705E00FA5518 /* Firebase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+
 		AB0F1B711C9B688E00C8126B /* MapListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListTableViewController.swift; sourceTree = "<group>"; };
 		AB651D1E1C9B7C0500312A93 /* MapListView1TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListView1TableViewController.swift; sourceTree = "<group>"; };
 		AB651D201C9B7C1300312A93 /* MapListView2TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListView2TableViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +63,12 @@
 		ACDA41291C98CA690076B407 /* MapBaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapBaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACDA412D1C98CA690076B407 /* MapBaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBaseUITests.swift; sourceTree = "<group>"; };
 		ACDA412F1C98CA690076B407 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACDD37981C9B6FA000FA5518 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		ACDD379A1C9B6FAF00FA5518 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		ACDD379C1C9B6FC200FA5518 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		ACDD379E1C9B6FCA00FA5518 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		ACDD37A01C9B6FD500FA5518 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		ACDD37A21C9B705E00FA5518 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = MapBase/Firebase.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +76,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC02C26F1C9B6D7D004BEE84 /* MapKit.framework in Frameworks */,
+				ACDD37A11C9B6FD500FA5518 /* SystemConfiguration.framework in Frameworks */,
+				ACDD37A31C9B705E00FA5518 /* Firebase.framework in Frameworks */,
+				ACDD379F1C9B6FCA00FA5518 /* Security.framework in Frameworks */,
+				ACDD379D1C9B6FC200FA5518 /* CFNetwork.framework in Frameworks */,
+				ACDD379B1C9B6FAF00FA5518 /* libc++.tbd in Frameworks */,
+				ACDD37991C9B6FA000FA5518 /* libicucore.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,18 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AC02C26B1C9B6BFD004BEE84 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				AC02C26C1C9B6C16004BEE84 /* MapMarker.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
 		ACDA41011C98CA690076B407 = {
 			isa = PBXGroup;
 			children = (
-				AC02C26E1C9B6D7D004BEE84 /* MapKit.framework */,
+				ACDD37A21C9B705E00FA5518 /* Firebase.framework */,
+				ACDD37A01C9B6FD500FA5518 /* SystemConfiguration.framework */,
+				ACDD379E1C9B6FCA00FA5518 /* Security.framework */,
+				ACDD379C1C9B6FC200FA5518 /* CFNetwork.framework */,
+				ACDD379A1C9B6FAF00FA5518 /* libc++.tbd */,
+				ACDD37981C9B6FA000FA5518 /* libicucore.tbd */,
 				ACDA410C1C98CA690076B407 /* MapBase */,
 				ACDA41211C98CA690076B407 /* MapBaseTests */,
 				ACDA412C1C98CA690076B407 /* MapBaseUITests */,
@@ -117,7 +131,6 @@
 		ACDA410C1C98CA690076B407 /* MapBase */ = {
 			isa = PBXGroup;
 			children = (
-				AC02C26B1C9B6BFD004BEE84 /* Models */,
 				ACDA410D1C98CA690076B407 /* AppDelegate.swift */,
 				AB651D201C9B7C1300312A93 /* MapListView2TableViewController.swift */,
 				AB651D1E1C9B7C0500312A93 /* MapListView1TableViewController.swift */,
@@ -220,11 +233,6 @@
 				TargetAttributes = {
 					ACDA41091C98CA690076B407 = {
 						CreatedOnToolsVersion = 7.2;
-						SystemCapabilities = {
-							com.apple.Maps.iOS = {
-								enabled = 1;
-							};
-						};
 					};
 					ACDA411D1C98CA690076B407 = {
 						CreatedOnToolsVersion = 7.2;
@@ -435,6 +443,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MapBase",
+				);
 				INFOPLIST_FILE = MapBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mapbase5.MapBase;
@@ -446,6 +458,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MapBase",
+				);
 				INFOPLIST_FILE = MapBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mapbase5.MapBase;
