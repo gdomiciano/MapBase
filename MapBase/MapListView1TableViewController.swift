@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MapListView1TableViewController: UITableViewController {
     
@@ -21,6 +22,10 @@ class MapListView1TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        var myRootRef = Firebase(url:"https://boiling-fire-3533.firebaseio.com")
+        myRootRef.setValue("MapBase Aula1 Public Table")
+        
     }
 
     override func didReceiveMemoryWarning() {
