@@ -15,21 +15,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" id="9Wx-fF-55g">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellId" id="9Wx-fF-55g">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Wx-fF-55g" id="NJo-z6-Pbb">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6m-MC-rFP">
-                                            <rect key="frame" x="233" y="0.0" width="30" height="30"/>
-                                            <state key="normal" title="List"/>
-                                            <connections>
-                                                <segue destination="gY8-ML-CZh" kind="show" identifier="bookmarkToMapListSegue" id="Adl-YJ-rTr"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -45,6 +36,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <segue destination="5UD-kh-jKQ" kind="show" identifier="bookmarkToMapSegue" id="29e-aQ-NDZ"/>
                     </connections>
@@ -74,6 +66,7 @@
                                     <segue destination="8sG-Va-g90" kind="show" identifier="mapToMapListSegue" id="YJ1-xQ-rRQ"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem title="Favotire" id="Gg0-w6-u9B"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -113,7 +106,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lb6-MP-gZn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Uzy-Ky-M2E">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDW-aO-Bq8">
@@ -126,6 +119,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTf-i2-VjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,15 +130,15 @@
             <objects>
                 <tableViewController title="Add by Nearby" id="zGE-eM-kPT" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lvt-9w-m5Z">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7Qu-nM-4IV">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Qu-nM-4IV" id="xtE-wW-akZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -154,6 +148,7 @@
                             <outlet property="delegate" destination="zGE-eM-kPT" id="Ujp-FK-oSP"/>
                         </connections>
                     </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kgf-e6-99r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,11 +163,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" id="vwN-uo-NPj" customClass="CellId">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellId" id="vwN-uo-NPj" customClass="CellId">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vwN-uo-NPj" id="y37-DV-vH8">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnM-IM-SgI">
@@ -198,6 +193,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <segue destination="5UD-kh-jKQ" kind="show" identifier="mainToMapSegue" id="dXt-Yk-Ef0"/>
                     </connections>
@@ -215,11 +211,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" id="vwN-od-sFo">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellId" id="vwN-od-sFo">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vwN-od-sFo" id="VOH-ds-Z6C">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZF-Dc-gLR">
@@ -245,6 +241,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <segue destination="5UD-kh-jKQ" kind="show" identifier="publicToMapSegue" id="3Mc-cY-qTr"/>
                     </connections>
@@ -276,15 +273,15 @@
             <objects>
                 <tableViewController title="Itens in List" id="8sG-Va-g90" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SvZ-cu-903">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="u05-U7-FAa">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u05-U7-FAa" id="K8L-Ls-R8W">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -307,8 +304,10 @@
                                     <segue destination="rh9-hr-A9C" kind="show" identifier="mapListToMapSegue" id="aps-6E-P2h"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem title="favorite" id="uTb-mi-wVX"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cfs-ze-HLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -328,6 +327,7 @@
                         <segue destination="Vgo-p1-8zB" kind="relationship" relationship="viewControllers" id="xfr-8H-O6D"/>
                         <segue destination="Xac-bS-2zj" kind="relationship" relationship="viewControllers" id="GRB-iT-WfI"/>
                         <segue destination="X4s-Sl-THs" kind="relationship" relationship="viewControllers" id="3bt-jN-RWA"/>
+                        <segue destination="VGe-V6-nXU" kind="relationship" relationship="viewControllers" id="O7j-tN-xdl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmF-JK-pJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -338,7 +338,7 @@
         <scene sceneID="DCY-M7-JDO">
             <objects>
                 <navigationController title="Navigation My Maps" automaticallyAdjustsScrollViewInsets="NO" id="Vgo-p1-8zB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="iTe-xm-KLw"/>
+                    <tabBarItem key="tabBarItem" title="Meus Mapas" image="home" selectedImage="home-hover" id="iTe-xm-KLw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jge-AB-hqq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -391,6 +391,25 @@
             </objects>
             <point key="canvasLocation" x="1218" y="1427"/>
         </scene>
+        <!--About-->
+        <scene sceneID="yVX-wB-YIM">
+            <objects>
+                <viewController title="About" id="VGe-V6-nXU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hV8-RC-KdG"/>
+                        <viewControllerLayoutGuide type="bottom" id="bPQ-Dw-QAB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z7y-Dd-HzJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="uZv-vH-4lv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jNx-pU-Hag" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1218" y="2296"/>
+        </scene>
         <!--Navigation to Map-->
         <scene sceneID="6HQ-QY-ST3">
             <objects>
@@ -429,10 +448,14 @@
             <point key="canvasLocation" x="2949" y="1427"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home" width="512" height="512"/>
+        <image name="home-hover" width="512" height="512"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3Mc-cY-qTr"/>
-        <segue reference="6yt-dd-EH3"/>
-        <segue reference="sd1-wa-aHa"/>
+        <segue reference="X7c-Yb-mZR"/>
+        <segue reference="VQy-ZW-xyH"/>
+        <segue reference="dXt-Yk-Ef0"/>
         <segue reference="YJ1-xQ-rRQ"/>
         <segue reference="aps-6E-P2h"/>
         <segue reference="ap6-le-OD9"/>
