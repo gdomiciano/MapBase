@@ -1,5 +1,5 @@
 //
-//  MapListTableViewController.swift
+//  MapListView2TableViewController.swift
 //  MapBase
 //
 //  Created by Joao Victor on 17/03/16.
@@ -8,10 +8,9 @@
 
 import UIKit
 
-
-class MapListTableViewController: UITableViewController {
+class MapListView2TableViewController: UITableViewController {
     
-    var arrayMapTeste: [String]=["Chapeus", "Botas", "Relógios", "Família", "Bolsas", "Casa de Massagem"]
+     var arrayMapTeste: [String]=["Cabeleireiro", "Acedemia", "Comida Mexicana", "Comida Japonesa"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +31,9 @@ class MapListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        
-        return  arrayMapTeste.count
+        return arrayMapTeste.count
     }
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
@@ -43,12 +42,6 @@ class MapListTableViewController: UITableViewController {
         cell.textLabel?.text = listMaps
         return cell
     }
-
-            
-    
-
-    
-    
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

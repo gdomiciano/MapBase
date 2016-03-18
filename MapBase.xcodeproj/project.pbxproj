@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AB0F1B721C9B688E00C8126B /* MapListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0F1B711C9B688E00C8126B /* MapListTableViewController.swift */; };
+		AB651D1F1C9B7C0500312A93 /* MapListView1TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB651D1E1C9B7C0500312A93 /* MapListView1TableViewController.swift */; };
+		AB651D211C9B7C1300312A93 /* MapListView2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB651D201C9B7C1300312A93 /* MapListView2TableViewController.swift */; };
 		AC02C26D1C9B6C16004BEE84 /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02C26C1C9B6C16004BEE84 /* MapMarker.swift */; };
 		AC02C26F1C9B6D7D004BEE84 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC02C26E1C9B6D7D004BEE84 /* MapKit.framework */; };
 		ACDA410E1C98CA690076B407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDA410D1C98CA690076B407 /* AppDelegate.swift */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		AB0F1B711C9B688E00C8126B /* MapListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListTableViewController.swift; sourceTree = "<group>"; };
+		AB651D1E1C9B7C0500312A93 /* MapListView1TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListView1TableViewController.swift; sourceTree = "<group>"; };
+		AB651D201C9B7C1300312A93 /* MapListView2TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListView2TableViewController.swift; sourceTree = "<group>"; };
 		AC02C26C1C9B6C16004BEE84 /* MapMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapMarker.swift; sourceTree = SOURCE_ROOT; };
 		AC02C26E1C9B6D7D004BEE84 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		ACDA410A1C98CA690076B407 /* MapBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +119,8 @@
 			children = (
 				AC02C26B1C9B6BFD004BEE84 /* Models */,
 				ACDA410D1C98CA690076B407 /* AppDelegate.swift */,
+				AB651D201C9B7C1300312A93 /* MapListView2TableViewController.swift */,
+				AB651D1E1C9B7C0500312A93 /* MapListView1TableViewController.swift */,
 				AB0F1B711C9B688E00C8126B /* MapListTableViewController.swift */,
 				ACDA410F1C98CA690076B407 /* ViewController.swift */,
 				ACDA41111C98CA690076B407 /* Main.storyboard */,
@@ -284,7 +290,9 @@
 			files = (
 				ACDA41101C98CA690076B407 /* ViewController.swift in Sources */,
 				AB0F1B721C9B688E00C8126B /* MapListTableViewController.swift in Sources */,
+				AB651D211C9B7C1300312A93 /* MapListView2TableViewController.swift in Sources */,
 				AC02C26D1C9B6C16004BEE84 /* MapMarker.swift in Sources */,
+				AB651D1F1C9B7C0500312A93 /* MapListView1TableViewController.swift in Sources */,
 				ACDA410E1C98CA690076B407 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
