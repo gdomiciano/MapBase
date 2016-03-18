@@ -168,7 +168,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vwN-uo-NPj" customClass="CellId">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" id="vwN-uo-NPj" customClass="CellId">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vwN-uo-NPj" id="y37-DV-vH8">
@@ -215,7 +215,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vwN-od-sFo">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" id="vwN-od-sFo">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vwN-od-sFo" id="VOH-ds-Z6C">
@@ -430,11 +430,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aps-6E-P2h"/>
-        <segue reference="YJ1-xQ-rRQ"/>
-        <segue reference="ap6-le-OD9"/>
-        <segue reference="sd1-wa-aHa"/>
-        <segue reference="6yt-dd-EH3"/>
         <segue reference="3Mc-cY-qTr"/>
+        <segue reference="6yt-dd-EH3"/>
+        <segue reference="sd1-wa-aHa"/>
+        <segue reference="YJ1-xQ-rRQ"/>
+        <segue reference="aps-6E-P2h"/>
+        <segue reference="ap6-le-OD9"/>
     </inferredMetricsTieBreakers>
 </document>
