@@ -41,7 +41,7 @@
                     <navigationItem key="navigationItem" id="0Nw-PT-F3k">
                         <barButtonItem key="rightBarButtonItem" image="add" id="0qi-Uh-eWP">
                             <connections>
-                                <segue destination="9kL-DQ-gKa" kind="presentation" identifier="bookmarkToAddMapSegue" id="dJb-td-WN8"/>
+                                <segue destination="fCp-OI-jQB" kind="presentation" identifier="bookmarkToAddMapSegue" id="dJb-td-WN8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVY-Ve-uId" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4391" y="-941"/>
+            <point key="canvasLocation" x="4923" y="-941"/>
         </scene>
         <!--Add Marker-->
         <scene sceneID="XF8-LE-czl">
@@ -198,7 +198,7 @@
                     <navigationItem key="navigationItem" title="MapBase" id="Reh-39-ZlG">
                         <barButtonItem key="rightBarButtonItem" image="add" id="ZBZ-dn-Uzp">
                             <connections>
-                                <segue destination="9kL-DQ-gKa" kind="presentation" identifier="mainToAddMapSegue" id="VQy-ZW-xyH"/>
+                                <segue destination="fCp-OI-jQB" kind="presentation" identifier="mainToAddMapSegue" id="VQy-ZW-xyH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -246,7 +246,7 @@
                     <navigationItem key="navigationItem" id="PtY-tA-dQ1">
                         <barButtonItem key="rightBarButtonItem" image="add" id="sXd-UL-dDt">
                             <connections>
-                                <segue destination="9kL-DQ-gKa" kind="presentation" identifier="publicToAddMapSegue" id="6yt-dd-EH3"/>
+                                <segue destination="fCp-OI-jQB" kind="presentation" identifier="publicToAddMapSegue" id="6yt-dd-EH3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -259,10 +259,10 @@
             </objects>
             <point key="canvasLocation" x="1874" y="1427"/>
         </scene>
-        <!--Form Add Map-->
+        <!--Add Map-->
         <scene sceneID="qwa-fA-eOS">
             <objects>
-                <viewController title="Form Add Map" id="9kL-DQ-gKa" sceneMemberID="viewController">
+                <viewController title="Add Map" id="9kL-DQ-gKa" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KHL-Gh-6rn"/>
                         <viewControllerLayoutGuide type="bottom" id="O3c-lV-Q7F"/>
@@ -270,12 +270,43 @@
                     <view key="view" contentMode="scaleToFill" id="6Qg-dS-eun">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLw-kq-w5q">
+                                <rect key="frame" x="139" y="28" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do mapa" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A7g-oc-gni">
+                                <rect key="frame" x="20" y="96" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Publico: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZ7-ou-3u0">
+                                <rect key="frame" x="20" y="159" width="66" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fvK-Dx-oig">
+                                <rect key="frame" x="221" y="156" width="79" height="29"/>
+                                <segments>
+                                    <segment title="Nao"/>
+                                    <segment title="Sim"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3f-ni-0Tp">
+                                <rect key="frame" x="128" y="273" width="65" height="30"/>
+                                <state key="normal" title="Adicionar"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Adicionar Mapa" id="LV9-gi-iza"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mwL-O1-p1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2949" y="-941"/>
+            <point key="canvasLocation" x="3481" y="-941"/>
         </scene>
         <!--Itens in List-->
         <scene sceneID="OHa-AF-lqs">
@@ -412,6 +443,64 @@
                     <view key="view" contentMode="scaleToFill" id="Z7y-Dd-HzJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MapBase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Q7-Go-YHP">
+                                <rect key="frame" x="20" y="28" width="280" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.86274509799999999" green="0.43921568630000002" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="-1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Versao: 1.0.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQV-IP-xVW">
+                                <rect key="frame" x="20" y="81" width="97" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Desenvolvido por:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4v-oh-B2D">
+                                <rect key="frame" x="20" y="110" width="138" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RM: 40127 - Francisco Kahil" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bpn-yb-khC">
+                                <rect key="frame" x="37" y="161" width="214" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RM: 40072 - Geiseany Domiciano" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXU-7Y-Nqr">
+                                <rect key="frame" x="37" y="181" width="257" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RM: 00000 - Joao Vitor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRf-Ei-vI2">
+                                <rect key="frame" x="37" y="202" width="181" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RM: 00000 - Julio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb4-A7-sbp">
+                                <rect key="frame" x="37" y="222" width="138" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Turma: 9MOB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXI-4g-60M">
+                                <rect key="frame" x="20" y="256" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RM: 00000 - Diego" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCP-Ag-UWI">
+                                <rect key="frame" x="37" y="140" width="147" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Sobre" image="info" selectedImage="info-hover" id="uZv-vH-4lv"/>
@@ -456,6 +545,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MaU-q1-cmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2949" y="1427"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kKR-Ak-AG3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fCp-OI-jQB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pwM-hp-3Qw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9kL-DQ-gKa" kind="relationship" relationship="rootViewController" id="9Xv-J7-X7x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eIU-jL-KIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2949" y="-941"/>
         </scene>
     </scenes>
     <resources>
