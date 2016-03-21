@@ -12,8 +12,10 @@ import Firebase
 class MapListView1TableViewController: UITableViewController {
     
     var arrayMapTeste: [String]=["Motos", "Carros", "Bancos", "Cinemas", "Baladas"]
-
+    
     var firebaseRef = Firebase(url:"https://boiling-fire-3533.firebaseio.com")
+    
+    var markersRef = Firebase(url:"https://boiling-fire-3533.firebaseio.com/markers")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +30,22 @@ class MapListView1TableViewController: UITableViewController {
         // run just one time
         // firstLoad()
         
-        firebaseRef.observeEventType(.Value, withBlock: {
+//        firebaseRef.observeEventType(.Value, withBlock: {
+//            snapshot in
+//            print("\(snapshot.key) -> \(snapshot.value)")
+//        })
+        markersRef.observeEventType(.Value, withBlock: {
             snapshot in
-            print("\(snapshot.key) -> \(snapshot.value)")
+//            print("\(snapshot.key) -> \(snapshot.value)")
+//            var m = snapshot.value
+//            print(m[0])
+//            print(m[1])
+            for item in snapshot.children {
+                print(item)
+                print(item.value!!["name"])
+                self.arrayMapTeste.append(item.value!!["name"] as! String)
+            }
+            self.tableView.reloadData()
         })
         
     }
