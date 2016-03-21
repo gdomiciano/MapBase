@@ -24,9 +24,9 @@ class MapListView1TableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        // myRootRef.setValue("MapBase Aula1 Public Table")
         
-        firstLoad()
+        // run just one time
+        // firstLoad()
         
         firebaseRef.observeEventType(.Value, withBlock: {
             snapshot in
