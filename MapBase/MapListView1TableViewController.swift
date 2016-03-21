@@ -15,7 +15,9 @@ class MapListView1TableViewController: UITableViewController {
     
     var firebaseRef = Firebase(url:"https://boiling-fire-3533.firebaseio.com")
     
+    var publicMapsRef = Firebase(url:"https://boiling-fire-3533.firebaseio.com/publicMaps")
     var markersRef = Firebase(url:"https://boiling-fire-3533.firebaseio.com/markers")
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,19 +32,9 @@ class MapListView1TableViewController: UITableViewController {
         // run just one time
         // firstLoad()
         
-//        firebaseRef.observeEventType(.Value, withBlock: {
-//            snapshot in
-//            print("\(snapshot.key) -> \(snapshot.value)")
-//        })
-        markersRef.observeEventType(.Value, withBlock: {
+        publicMapsRef.observeEventType(.Value, withBlock: {
             snapshot in
-//            print("\(snapshot.key) -> \(snapshot.value)")
-//            var m = snapshot.value
-//            print(m[0])
-//            print(m[1])
             for item in snapshot.children {
-                print(item)
-                print(item.value!!["name"])
                 self.arrayMapTeste.append(item.value!!["name"] as! String)
             }
             self.tableView.reloadData()
@@ -50,7 +42,14 @@ class MapListView1TableViewController: UITableViewController {
         
     }
     
-    func firstLoad() {
+    func saveMaps() {
+        let markers: [Int] = [0, 1]
+        let hatStores = ["name": "Lojas de chapéu", "markers": markers]
+        
+        publicMapsRef.setValue([hatStores])
+        
+    }
+    func saveMarkers() {
         let casadochapeu = ["lat": "-23.342", "lon": "-45.4387834", "name":"Casa do Chapéu", "address":"Av. Lins 1222"]
         let chapelariamaluca = ["lat": "-24.342", "lon": "-46.4387834", "name":"Chapelaria Maluca", "address":"Av. Lins 2221"]
         
@@ -59,8 +58,12 @@ class MapListView1TableViewController: UITableViewController {
         arrayMarkers.append(casadochapeu)
         arrayMarkers.append(chapelariamaluca)
         
-        let markersRef = firebaseRef.childByAppendingPath("markers")
         markersRef.setValue(arrayMarkers)
+    }
+    
+    func firstLoad() {
+        saveMarkers()
+        saveMaps()
     }
     
 
@@ -77,10 +80,8 @@ class MapListView1TableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("CellId", forIndexPath: indexPath) as UITableViewCell
-        let listMaps = self.arrayMapTeste[indexPath.row]
-        cell.textLabel?.text = listMaps
+        cell.textLabel?.text = self.arrayMapTeste[indexPath.row]
         return cell
     }
 
