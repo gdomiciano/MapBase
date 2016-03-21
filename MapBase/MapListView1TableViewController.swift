@@ -11,7 +11,7 @@ import Firebase
 
 class MapListView1TableViewController: UITableViewController {
     
-    var arrayMapTeste: [String]=["Motos", "Carros", "Bancos", "Cinemas", "Baladas"]
+    var arrayMapTeste: [String] = []
     
     var firebaseRef = Firebase(url:"https://boiling-fire-3533.firebaseio.com")
     
