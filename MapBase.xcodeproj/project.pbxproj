@@ -11,10 +11,12 @@
 		AB651D1F1C9B7C0500312A93 /* MapListView1TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB651D1E1C9B7C0500312A93 /* MapListView1TableViewController.swift */; };
 		AB651D211C9B7C1300312A93 /* MapListView2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB651D201C9B7C1300312A93 /* MapListView2TableViewController.swift */; };
 		AC02C26D1C9B6C16004BEE84 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		AC46F8141CA1F25C002D94AA /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46F8121CA1F25C002D94AA /* RealmSwift.framework */; };
-		AC46F8161CA1F2D7002D94AA /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46F8111CA1F25C002D94AA /* Realm.framework */; };
 		AC46F81D1CA1F4C5002D94AA /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC46F81B1CA1F4C5002D94AA /* Map.swift */; };
 		AC46F81E1CA1F4C5002D94AA /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC46F81C1CA1F4C5002D94AA /* Marker.swift */; };
+		AC46F81F1CA1F5B6002D94AA /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46F8111CA1F25C002D94AA /* Realm.framework */; };
+		AC46F8201CA1F5B6002D94AA /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC46F8111CA1F25C002D94AA /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AC46F8211CA1F5B6002D94AA /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46F8121CA1F25C002D94AA /* RealmSwift.framework */; };
+		AC46F8221CA1F5B6002D94AA /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC46F8121CA1F25C002D94AA /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACDA410E1C98CA690076B407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDA410D1C98CA690076B407 /* AppDelegate.swift */; };
 		ACDA41101C98CA690076B407 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDA410F1C98CA690076B407 /* ViewController.swift */; };
 		ACDA41131C98CA690076B407 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACDA41111C98CA690076B407 /* Main.storyboard */; settings = {ASSET_TAGS = (AAAAAA, ); }; };
@@ -47,6 +49,21 @@
 			remoteInfo = MapBase;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AC46F8231CA1F5B6002D94AA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AC46F8221CA1F5B6002D94AA /* RealmSwift.framework in Embed Frameworks */,
+				AC46F8201CA1F5B6002D94AA /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AB0F1B711C9B688E00C8126B /* MapListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListTableViewController.swift; sourceTree = "<group>"; };
@@ -83,13 +100,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC46F8161CA1F2D7002D94AA /* Realm.framework in Frameworks */,
-				AC46F8141CA1F25C002D94AA /* RealmSwift.framework in Frameworks */,
 				ACDD37A11C9B6FD500FA5518 /* SystemConfiguration.framework in Frameworks */,
 				ACDD37A31C9B705E00FA5518 /* Firebase.framework in Frameworks */,
 				ACDD379F1C9B6FCA00FA5518 /* Security.framework in Frameworks */,
 				ACDD379D1C9B6FC200FA5518 /* CFNetwork.framework in Frameworks */,
+				AC46F81F1CA1F5B6002D94AA /* Realm.framework in Frameworks */,
 				ACDD379B1C9B6FAF00FA5518 /* libc++.tbd in Frameworks */,
+				AC46F8211CA1F5B6002D94AA /* RealmSwift.framework in Frameworks */,
 				ACDD37991C9B6FA000FA5518 /* libicucore.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +212,7 @@
 				ACDA41071C98CA690076B407 /* Frameworks */,
 				ACDA41081C98CA690076B407 /* Resources */,
 				AC46F8151CA1F27E002D94AA /* ShellScript */,
+				AC46F8231CA1F5B6002D94AA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -326,7 +344,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
