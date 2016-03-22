@@ -32,11 +32,9 @@ class MapListView1TableViewController: UITableViewController {
         // run just one time
         // firstLoad()
         
-        publicMapsRef.observeEventType(.Value, withBlock: {
+        publicMapsRef.observeEventType(.ChildAdded, withBlock: {
             snapshot in
-            for item in snapshot.children {
-                self.arrayMapTeste.append(item.value!!["name"] as! String)
-            }
+            self.arrayMapTeste.append(snapshot.value["name"] as! String)
             self.tableView.reloadData()
         })
         
