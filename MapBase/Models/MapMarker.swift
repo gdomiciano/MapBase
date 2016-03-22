@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 
+
+
 class MapMarker: NSObject, MKAnnotation {
     
     var coordinate: CLLocationCoordinate2D
