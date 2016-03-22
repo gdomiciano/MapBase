@@ -13,6 +13,8 @@
 		AC02C26D1C9B6C16004BEE84 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		AC46F8141CA1F25C002D94AA /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46F8121CA1F25C002D94AA /* RealmSwift.framework */; };
 		AC46F8161CA1F2D7002D94AA /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46F8111CA1F25C002D94AA /* Realm.framework */; };
+		AC46F81D1CA1F4C5002D94AA /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC46F81B1CA1F4C5002D94AA /* Map.swift */; };
+		AC46F81E1CA1F4C5002D94AA /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC46F81C1CA1F4C5002D94AA /* Marker.swift */; };
 		ACDA410E1C98CA690076B407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDA410D1C98CA690076B407 /* AppDelegate.swift */; };
 		ACDA41101C98CA690076B407 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDA410F1C98CA690076B407 /* ViewController.swift */; };
 		ACDA41131C98CA690076B407 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACDA41111C98CA690076B407 /* Main.storyboard */; settings = {ASSET_TAGS = (AAAAAA, ); }; };
@@ -52,6 +54,8 @@
 		AB651D201C9B7C1300312A93 /* MapListView2TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListView2TableViewController.swift; sourceTree = "<group>"; };
 		AC46F8111CA1F25C002D94AA /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../Downloads/realm-swift-0.98.5/ios/swift-2.1.1/Realm.framework"; sourceTree = "<group>"; };
 		AC46F8121CA1F25C002D94AA /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../Downloads/realm-swift-0.98.5/ios/swift-2.1.1/RealmSwift.framework"; sourceTree = "<group>"; };
+		AC46F81B1CA1F4C5002D94AA /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		AC46F81C1CA1F4C5002D94AA /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		ACDA410A1C98CA690076B407 /* MapBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACDA410D1C98CA690076B407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACDA410F1C98CA690076B407 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 		ACE33E6D1C9B82BA00B37243 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AC46F81B1CA1F4C5002D94AA /* Map.swift */,
+				AC46F81C1CA1F4C5002D94AA /* Marker.swift */,
 				ACE33E6E1C9B82BA00B37243 /* MapMarker.swift */,
 			);
 			path = Models;
@@ -331,11 +337,13 @@
 			files = (
 				ACDA41101C98CA690076B407 /* ViewController.swift in Sources */,
 				AB0F1B721C9B688E00C8126B /* MapListTableViewController.swift in Sources */,
+				AC46F81D1CA1F4C5002D94AA /* Map.swift in Sources */,
 				AB651D211C9B7C1300312A93 /* MapListView2TableViewController.swift in Sources */,
 				AC02C26D1C9B6C16004BEE84 /* (null) in Sources */,
 				ACE33E6F1C9B82BA00B37243 /* MapMarker.swift in Sources */,
 				AB651D1F1C9B7C0500312A93 /* MapListView1TableViewController.swift in Sources */,
 				ACDA410E1C98CA690076B407 /* AppDelegate.swift in Sources */,
+				AC46F81E1CA1F4C5002D94AA /* Marker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
