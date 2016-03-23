@@ -15,15 +15,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellId" textLabel="Q1E-nb-4x0" style="IBUITableViewCellStyleDefault" id="9Wx-fF-55g">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="CellId" textLabel="Q1E-nb-4x0" style="IBUITableViewCellStyleDefault" id="9Wx-fF-55g">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Wx-fF-55g" id="NJo-z6-Pbb">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="308" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q1E-nb-4x0">
-                                            <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="293" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -560,8 +560,8 @@
         <image name="search" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GkA-VU-Lqh"/>
-        <segue reference="i3a-VQ-0Qf"/>
+        <segue reference="rg6-bh-T36"/>
+        <segue reference="595-IW-cIZ"/>
         <segue reference="ap6-le-OD9"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.83921568629999999" green="0.23921568630000001" blue="0.074509803920000006" alpha="1" colorSpace="calibratedRGB"/>
