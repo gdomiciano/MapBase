@@ -27,7 +27,7 @@ class MapListView2TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // writeTestDatabase()
+         writeTestDatabase()
         readDatabaseAndUpdateUI()
   
     }

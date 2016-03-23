@@ -26,7 +26,7 @@ class MapListTableViewController: UITableViewController {
         super.viewDidLoad()
         //tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "CellIdentifier")
         
-        //writeTestDatabase()
+        writeTestDatabase()
         readDatabaseAndUpdateUI()
         
      

@@ -26,7 +26,8 @@ class ItensInMapViewController: UIViewController {
 
     @IBOutlet var mapItensView: MKMapView!
     
-
+    
+    let locationManager:CLLocationManager = CLLocationManager()
     
     let realm = try! Realm()
     
@@ -42,8 +43,26 @@ class ItensInMapViewController: UIViewController {
         
          self.mapItensView.addGestureRecognizer(longPress)
         
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if(CLLocationManager.locationServicesEnabled()){
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+            
+            if let coordinate = locationManager.location?.coordinate{
+                let loc:CLLocationCoordinate2D = coordinate
+                self.mapItensView.region = MKCoordinateRegionMakeWithDistance(loc, 1200, 1200)
+                self.mapItensView.showsUserLocation = true
+                
+            }
+            
+        }
+        
     }
     
+    func putAnnotation(annotation:[MKAnnotation]) -> Void{
+        self.mapItensView.addAnnotations(annotation)
+    }
     
     func loongPress(gesture: UIGestureRecognizer){
         if(gesture.state == .Began){
