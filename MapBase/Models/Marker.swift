@@ -18,7 +18,7 @@ class Marker: Object {
     
     dynamic var name = ""
     
-    dynamic var endereco = ""
+    dynamic var address = ""
     
     dynamic var lat = 0.0
     
@@ -30,6 +30,7 @@ class Marker: Object {
     }
 
     
+
     
 /* let longPress: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "loongPress: ")
 longPress.allowableMovement = 10
