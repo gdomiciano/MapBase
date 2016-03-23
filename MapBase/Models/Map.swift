@@ -14,7 +14,7 @@ class Map: Object {
 
     dynamic var id = ""
     
-    dynamic var nome = ""
+    dynamic var name = ""
     
     dynamic var type = ""
     

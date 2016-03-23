@@ -8,20 +8,100 @@
 
 import UIKit
 
+import RealmSwift
+
 class MapListView2TableViewController: UITableViewController {
     
      var arrayMapTeste: [String]=["Cabeleireiro", "Acedemia", "Comida Mexicana", "Comida Japonesa"]
+    
+    
+    
+    
+    var arrayMap:[Map] = []
+    
+    var type: String = ""
+    var isBookmarked:  Bool = false
+    var maps: Results<Map>?
+    
+    let realm = try! Realm()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // writeTestDatabase()
+        readDatabaseAndUpdateUI()
+  
     }
-
+    
+    
+    func readDatabaseAndUpdateUI(){
+        
+        
+        switch (type){
+        case "Private":
+            maps = realm.objects(Map).filter("type = 'Private'")
+            
+        case "Public":
+            maps = realm.objects(Map).filter("type = Public")
+            
+        default:
+            maps = realm.objects(Map)
+            
+        }
+        
+        
+        // maps = realm.objectForPrimaryKey(Map, key: Map.primaryKey()!)
+        
+    }
+    
+    
+    
+    func writeTestDatabase(){
+        let map =  Map()
+        let mark1 = Marker()
+        let mark2 = Marker()
+        let mark3 = Marker()
+        
+        mark1.name = "Lugar1"
+        mark1.lat = -43.56666
+        mark1.lon = -23.56566
+        mark1.address = "Rua 1 Do Lugar 1"
+        mark1.id = NSUUID().UUIDString
+        mark2.name = "Lugar2"
+        mark2.lat = -34.56666
+        mark2.lon = -14.56566
+        mark2.address = "Rua 2 Do Lugar 2"
+        mark2.id = NSUUID().UUIDString
+        
+        
+        mark3.name = "Lugar3"
+        mark3.lat = -65.56666
+        mark3.lon = -12.56566
+        mark3.address = "Rua 3 Do Lugar 3"
+        mark3.id = NSUUID().UUIDString
+        
+        var marks: [Marker] = [Marker]()
+        
+        marks.append(mark1)
+        
+        marks.append(mark2)
+        
+        marks.append(mark3)
+        
+        map.name = "Mapa 1"
+        map.id = NSUUID().UUIDString
+        map.type = "Private"
+        map.isBookmarked = false
+        map.markers.appendContentsOf(marks)
+        
+        try! realm.write({() -> Void in
+            realm.add([map])
+            
+        })
+        
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -31,18 +111,42 @@ class MapListView2TableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return arrayMapTeste.count
+        return (maps?.count)!
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
         let cell = tableView.dequeueReusableCellWithIdentifier("CellId", forIndexPath: indexPath) as UITableViewCell
-        let listMaps = self.arrayMapTeste[indexPath.row]
-        cell.textLabel?.text = listMaps
+        let listMaps = maps?[indexPath.row]
+        cell.textLabel?.text = listMaps?.name
         return cell
     }
 
+    
+    var selectedMapID: String?
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //var map: Map = indexPath.row as! Map
+        //selectedMapID = map.id
+        performSegueWithIdentifier("mainToMapSegue", sender: indexPath)
+        
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "mainToMapSegue"){
+            let row = (sender as! NSIndexPath).row; //we know that sender is an NSIndexPath here.
+            let map = maps![row] as! Map
+            
+            var iv: ItensInMapViewController = segue.destinationViewController as! ItensInMapViewController
+            iv.idMap = map.id
+            
+            
+        }
+    }
+    
+    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)

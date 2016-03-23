@@ -34,7 +34,7 @@ class MapListView1TableViewController: UITableViewController {
         
         publicMapsRef.observeEventType(.ChildAdded, withBlock: {
             snapshot in
-            self.arrayMapTeste.append(snapshot.value["name"] as! String)
+           // self.arrayMapTeste.append(snapshot.value["name"] as! String)
             self.tableView.reloadData()
         })
         
