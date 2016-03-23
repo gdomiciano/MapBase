@@ -26,7 +26,7 @@ class ItensInMapViewController: UIViewController {
 
     @IBOutlet var mapItensView: MKMapView!
     
-    
+
     
     let realm = try! Realm()
     
@@ -36,12 +36,28 @@ class ItensInMapViewController: UIViewController {
         self.map = realm.objectForPrimaryKey(Map.self, key: idMap)!
         print(idMap)
         print (map.name)
+        let longPress: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "loongPress: ")
+        longPress.allowableMovement = 10
+        longPress.minimumPressDuration = 1.0
+        
+         self.mapItensView.addGestureRecognizer(longPress)
         
     }
     
     
-    
-    
+    func loongPress(gesture: UIGestureRecognizer){
+        if(gesture.state == .Began){
+            let point: CGPoint = gesture.locationInView(self.mapItensView)
+            print("Long press x: \(point.x) | y: \(point.y)")
+            
+            
+            let coordenada: CLLocationCoordinate2D = self.mapItensView.convertPoint(point, toCoordinateFromView: self.mapItensView)
+            print("Long press lat: \(coordenada.latitude) | logn: \(coordenada.longitude)")
+            
+            let annot: MapMarker = MapMarker(coordinate: coordenada, title: "Ponto 1", subtitle: "Subtitulo")
+            self.mapItensView.addAnnotation(annot)
+        }
+    }
     
     
 
