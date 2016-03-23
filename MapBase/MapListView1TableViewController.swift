@@ -8,8 +8,9 @@
 
 import UIKit
 import Firebase
+import MapKit
 
-class MapListView1TableViewController: UITableViewController {
+class MapListView1TableViewController: UITableViewController, MKMapViewDelegate {
     
     var arrayMapTeste: [String] = []
     
@@ -17,10 +18,14 @@ class MapListView1TableViewController: UITableViewController {
     
     var publicMapsRef = Firebase(url:"https://boiling-fire-3533.firebaseio.com/publicMaps")
     var markersRef = Firebase(url:"https://boiling-fire-3533.firebaseio.com/markers")
+    var markers: [Int]?
+    
+    var customMarkers:[MapMarker] = [MapMarker]()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,12 +37,42 @@ class MapListView1TableViewController: UITableViewController {
         // run just one time
         // firstLoad()
         
-        publicMapsRef.observeEventType(.ChildAdded, withBlock: {
-            snapshot in
-            self.arrayMapTeste.append(snapshot.value["name"] as! String)
+        publicMapsRef.observeEventType(.ChildAdded, withBlock: { snapshot in
+            if let dic = snapshot.value as? [String: AnyObject] {
+                if let nome = dic["name"] as? String {
+                    self.arrayMapTeste.append(nome)
+                }
+                if let mapMarkers = dic["markers"] as? [Int] {
+                    //print(mapMarkers)
+                    self.markers = mapMarkers
+                }
+            }
             self.tableView.reloadData()
         })
+        loadMarkers()
         
+    }
+    
+    func loadMarkers() {
+        markersRef.observeEventType(.Value, withBlock: { snapshot in
+            for(var i:Int = 0; i < self.markers?.count; i++){
+                if let item = snapshot.childSnapshotForPath(String(self.markers![i])) {
+                    if let marker = item.value as? [String: AnyObject] {
+                        
+                        
+                        let lat:Double = Double(marker["lat"] as! String)!
+                        let log:Double = Double(marker["lon"] as! String)!
+                        let name:String = marker["name"] as! String
+                        let address:String = marker["address"] as! String
+                        
+                        self.customMarkers.append(MapMarker(coordinate: CLLocationCoordinate2DMake(lat, log), title: name, subtitle:address))
+                       
+                    }
+
+                }
+            }
+            
+        })
     }
     
     func saveMaps() {
