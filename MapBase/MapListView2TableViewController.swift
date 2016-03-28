@@ -27,7 +27,7 @@ class MapListView2TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         writeTestDatabase()
+         //writeTestDatabase()
         readDatabaseAndUpdateUI()
   
     }
@@ -49,7 +49,7 @@ class MapListView2TableViewController: UITableViewController {
         }
         
         
-        // maps = realm.objectForPrimaryKey(Map, key: Map.primaryKey()!)
+      
         
     }
     
@@ -98,6 +98,22 @@ class MapListView2TableViewController: UITableViewController {
             
         })
         
+        
+        mark1.name = " Local 11"
+        mark2.name = " Local 22"
+        mark3.name = " Local 33 "
+        
+        var map2: Map = Map()
+        map2.id = NSUUID().UUIDString
+        map2.type = "Public"
+        map2.isBookmarked = false
+        map2.markers.appendContentsOf(marks)
+        try! realm.write({() -> Void in
+            realm.add([map2])
+            
+        })
+
+        
     }
     
     
@@ -107,12 +123,14 @@ class MapListView2TableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return (maps?.count)!
     }
+    
+    
+    
+    
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
@@ -124,8 +142,14 @@ class MapListView2TableViewController: UITableViewController {
     }
 
     
+    
+    
+    
     var selectedMapID: String?
     
+    
+    
+    //Clicando na celula da tabela - Ira para o itens do map
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //var map: Map = indexPath.row as! Map
         //selectedMapID = map.id
@@ -134,16 +158,59 @@ class MapListView2TableViewController: UITableViewController {
     }
     
     
+    
+    
+    @IBAction func gotToAddMap(sender: UIBarButtonItem) {
+        performSegueWithIdentifier("mainToAddMapSegue", sender: sender)
+    }
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "mainToMapSegue"){
             let row = (sender as! NSIndexPath).row; //we know that sender is an NSIndexPath here.
             let map = maps![row] as! Map
-            
             var iv: ItensInMapViewController = segue.destinationViewController as! ItensInMapViewController
             iv.idMap = map.id
             
             
         }
+        
+        
+        
+        
+        if(segue.identifier == "mainToAddMapSegue"){
+            var iv: CreateMapViewController = segue.destinationViewController as! CreateMapViewController
+            
+            
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    //Ao Clicar no icone de detalhes vai para a view controller AddMarkerViewController
+    /*
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    
+        var i: ItemAnnotation = view.annotation as! ItemAnnotation
+        displayRegionCenteredOnMapItem( i.mapItem!)
+        
+        
+        
+    }
+    */
+    
+    
+    
+    
+    
+    //Reload dos itens da tabela depois que for inserido um novo map
+    override func viewWillAppear(animated: Bool) {
+        self.tableView.reloadData()
     }
     
     

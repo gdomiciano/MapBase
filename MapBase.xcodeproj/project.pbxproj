@@ -13,10 +13,6 @@
 		AC02C26D1C9B6C16004BEE84 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		AC46F81D1CA1F4C5002D94AA /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC46F81B1CA1F4C5002D94AA /* Map.swift */; };
 		AC46F81E1CA1F4C5002D94AA /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC46F81C1CA1F4C5002D94AA /* Marker.swift */; };
-		AC46F81F1CA1F5B6002D94AA /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46F8111CA1F25C002D94AA /* Realm.framework */; };
-		AC46F8201CA1F5B6002D94AA /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC46F8111CA1F25C002D94AA /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AC46F8211CA1F5B6002D94AA /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46F8121CA1F25C002D94AA /* RealmSwift.framework */; };
-		AC46F8221CA1F5B6002D94AA /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC46F8121CA1F25C002D94AA /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACC8CA181CA1FEED00BCC7B8 /* AddMarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC8CA171CA1FEED00BCC7B8 /* AddMarkerViewController.swift */; };
 		ACC8CA1A1CA1FF0200BCC7B8 /* CreateMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC8CA191CA1FF0200BCC7B8 /* CreateMapViewController.swift */; };
 		ACDA410E1C98CA690076B407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDA410D1C98CA690076B407 /* AppDelegate.swift */; };
@@ -34,6 +30,10 @@
 		ACDD37A31C9B705E00FA5518 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDD37A21C9B705E00FA5518 /* Firebase.framework */; };
 		ACE33E6F1C9B82BA00B37243 /* MapMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE33E6E1C9B82BA00B37243 /* MapMarker.swift */; };
 		ACF2AD801CA2169700D0067A /* ItensInMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2AD7F1CA2169700D0067A /* ItensInMapViewController.swift */; };
+		B36C2F281CA740490014EE13 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36C2F271CA740490014EE13 /* Realm.framework */; };
+		B36C2F291CA740490014EE13 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B36C2F271CA740490014EE13 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B36C2F2C1CA740620014EE13 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36C2F2B1CA740620014EE13 /* RealmSwift.framework */; };
+		B36C2F2D1CA740620014EE13 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B36C2F2B1CA740620014EE13 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,14 +54,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		AC46F8231CA1F5B6002D94AA /* Embed Frameworks */ = {
+		B36C2F2A1CA740490014EE13 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AC46F8221CA1F5B6002D94AA /* RealmSwift.framework in Embed Frameworks */,
-				AC46F8201CA1F5B6002D94AA /* Realm.framework in Embed Frameworks */,
+				B36C2F2D1CA740620014EE13 /* RealmSwift.framework in Embed Frameworks */,
+				B36C2F291CA740490014EE13 /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,8 +72,6 @@
 		AB0F1B711C9B688E00C8126B /* MapListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListTableViewController.swift; sourceTree = "<group>"; };
 		AB651D1E1C9B7C0500312A93 /* MapListView1TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListView1TableViewController.swift; sourceTree = "<group>"; };
 		AB651D201C9B7C1300312A93 /* MapListView2TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListView2TableViewController.swift; sourceTree = "<group>"; };
-		AC46F8111CA1F25C002D94AA /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../Downloads/realm-swift-0.98.5/ios/swift-2.1.1/Realm.framework"; sourceTree = "<group>"; };
-		AC46F8121CA1F25C002D94AA /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../Downloads/realm-swift-0.98.5/ios/swift-2.1.1/RealmSwift.framework"; sourceTree = "<group>"; };
 		AC46F81B1CA1F4C5002D94AA /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		AC46F81C1CA1F4C5002D94AA /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		ACC8CA171CA1FEED00BCC7B8 /* AddMarkerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMarkerViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +97,8 @@
 		ACDD37A21C9B705E00FA5518 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = MapBase/Firebase.framework; sourceTree = "<group>"; };
 		ACE33E6E1C9B82BA00B37243 /* MapMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapMarker.swift; sourceTree = "<group>"; };
 		ACF2AD7F1CA2169700D0067A /* ItensInMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItensInMapViewController.swift; sourceTree = "<group>"; };
+		B36C2F271CA740490014EE13 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		B36C2F2B1CA740620014EE13 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,9 +110,9 @@
 				ACDD37A31C9B705E00FA5518 /* Firebase.framework in Frameworks */,
 				ACDD379F1C9B6FCA00FA5518 /* Security.framework in Frameworks */,
 				ACDD379D1C9B6FC200FA5518 /* CFNetwork.framework in Frameworks */,
-				AC46F81F1CA1F5B6002D94AA /* Realm.framework in Frameworks */,
+				B36C2F281CA740490014EE13 /* Realm.framework in Frameworks */,
 				ACDD379B1C9B6FAF00FA5518 /* libc++.tbd in Frameworks */,
-				AC46F8211CA1F5B6002D94AA /* RealmSwift.framework in Frameworks */,
+				B36C2F2C1CA740620014EE13 /* RealmSwift.framework in Frameworks */,
 				ACDD37991C9B6FA000FA5518 /* libicucore.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +137,8 @@
 		ACDA41011C98CA690076B407 = {
 			isa = PBXGroup;
 			children = (
-				AC46F8111CA1F25C002D94AA /* Realm.framework */,
-				AC46F8121CA1F25C002D94AA /* RealmSwift.framework */,
+				B36C2F2B1CA740620014EE13 /* RealmSwift.framework */,
+				B36C2F271CA740490014EE13 /* Realm.framework */,
 				ACDD37A21C9B705E00FA5518 /* Firebase.framework */,
 				ACDD37A01C9B6FD500FA5518 /* SystemConfiguration.framework */,
 				ACDD379E1C9B6FCA00FA5518 /* Security.framework */,
@@ -221,7 +221,7 @@
 				ACDA41071C98CA690076B407 /* Frameworks */,
 				ACDA41081C98CA690076B407 /* Resources */,
 				AC46F8151CA1F27E002D94AA /* ShellScript */,
-				AC46F8231CA1F5B6002D94AA /* Embed Frameworks */,
+				B36C2F2A1CA740490014EE13 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -64,8 +64,8 @@ class MapListView1TableViewController: UITableViewController, MKMapViewDelegate 
                         let log:Double = Double(marker["lon"] as! String)!
                         let name:String = marker["name"] as! String
                         let address:String = marker["address"] as! String
-                        
-                        self.customMarkers.append(MapMarker(coordinate: CLLocationCoordinate2DMake(lat, log), title: name, subtitle:address))
+                        let id:String = marker["id"] as! String
+                        self.customMarkers.append(MapMarker(coordinate: CLLocationCoordinate2DMake(lat, log), title: name, subtitle:address, id: id))
                        
                     }
 

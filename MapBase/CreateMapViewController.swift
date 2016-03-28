@@ -24,7 +24,7 @@ class CreateMapViewController: UIViewController {
     
     
     @IBAction func createMap(sender: UIButton) {
-        let map =  Map()
+        let map: Map =  Map()
         map.name = mapName.text!
         map.id = NSUUID().UUIDString
         switch (typeSegmented.selectedSegmentIndex) {
@@ -38,15 +38,15 @@ class CreateMapViewController: UIViewController {
         }
         
         map.isBookmarked = false
-        
+        //print (map.name)
         let realm = try! Realm()
         
         try! realm.write({() -> Void in
             realm.add(map)
             
         })
-        self.dismissViewControllerAnimated(true, completion: nil)
-        
+        //self.dismissViewControllerAnimated(true, completion: nil)
+        navigationController?.popViewControllerAnimated(true)
         
         
     }

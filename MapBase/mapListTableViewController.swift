@@ -26,7 +26,7 @@ class MapListTableViewController: UITableViewController {
         super.viewDidLoad()
         //tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "CellIdentifier")
         
-        writeTestDatabase()
+       // writeTestDatabase()
         readDatabaseAndUpdateUI()
         
      
@@ -98,6 +98,20 @@ class MapListTableViewController: UITableViewController {
             
         })
 
+        mark1.name = " Local 11"
+        mark2.name = " Local 22"
+        mark3.name = " Local 33 "
+        
+        var map2: Map = Map()
+        map2.id = NSUUID().UUIDString
+        map2.type = "Public"
+        map2.isBookmarked = false
+        map2.markers.appendContentsOf(marks)
+        try! realm.write({() -> Void in
+           // realm.add([map2])
+            
+        })
+        
     }
     
     

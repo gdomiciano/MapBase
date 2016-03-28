@@ -8,10 +8,16 @@
 
 import UIKit
 
+import RealmSwift
+
 class AddMarkerViewController: UIViewController {
 
     
+    var markerID: String!
     
+    var marker: Marker!
+    
+    let realm = try! Realm()
     
     //Variaveis que virao da Segue
     var lat: Double?
@@ -32,9 +38,17 @@ class AddMarkerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        labelLat.text = lat as! String
-        labelLong.text = long as! String
-        // Do any additional setup after loading the view.
+        print("Marker id" + markerID)
+       // labelLat.text = lat as! String
+        //labelLong.text = long as! String
+        self.marker = realm.objectForPrimaryKey(Marker.self, key: markerID)!
+        print(marker.name)
+        markerName.text = self.marker.name
+        markerAddress.text = self.marker.address
+        labelLat.text = "\(self.marker.lat)"
+        labelLong.text = "\(self.marker.lon)"
+    
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,24 +58,19 @@ class AddMarkerViewController: UIViewController {
     
 
     
-    func addMarkerToArray(){
-        var marker: Marker = Marker()
-        marker.lat = lat!
-        marker.lon = long!
-        marker.name = markerName.text!
-        marker.address = markerAddress.text!
-    
-    }
-    
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func editMarkerFinish(sender: UIButton) {
+    
+            
+            try! realm.write({() -> Void in
+                self.marker.name = markerName.text!
+                self.marker.address = markerAddress.text!
+                realm.add(self.marker, update: true)
+                
+            })
+            navigationController?.popViewControllerAnimated(true)
     }
-    */
+
 
 }
