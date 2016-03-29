@@ -10,7 +10,7 @@ import UIKit
 
 import RealmSwift
 
-class AddMarkerViewController: UIViewController {
+class AddMarkerViewController: UIViewController, UITextFieldDelegate {
 
     
     var markerID: String!
@@ -38,13 +38,26 @@ class AddMarkerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.markerName.delegate = self
+        self.markerAddress.delegate = self
         print("Marker id" + markerID)
        // labelLat.text = lat as! String
         //labelLong.text = long as! String
         self.marker = realm.objectForPrimaryKey(Marker.self, key: markerID)!
         print(marker.name)
-        markerName.text = self.marker.name
-        markerAddress.text = self.marker.address
+        
+        if(self.marker.name == "Pino Criado Pelo Usuario"){
+            markerName.placeholder = self.marker.name
+            markerAddress.placeholder = self.marker.address
+
+        }else{
+            markerName.text = self.marker.name
+            markerAddress.text = self.marker.address
+        }
+        
+        
+     
+        
         labelLat.text = "\(self.marker.lat)"
         labelLong.text = "\(self.marker.lon)"
     
@@ -57,8 +70,12 @@ class AddMarkerViewController: UIViewController {
     }
     
 
-    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
+    
     
     @IBAction func editMarkerFinish(sender: UIButton) {
     

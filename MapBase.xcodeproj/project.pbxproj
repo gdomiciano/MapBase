@@ -11,6 +11,7 @@
 		AB651D1F1C9B7C0500312A93 /* MapListView1TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB651D1E1C9B7C0500312A93 /* MapListView1TableViewController.swift */; };
 		AB651D211C9B7C1300312A93 /* MapListView2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB651D201C9B7C1300312A93 /* MapListView2TableViewController.swift */; };
 		AC02C26D1C9B6C16004BEE84 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		AC1FF48C1CAB2F7A002582DD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC1FF48B1CAB2F7A002582DD /* MapKit.framework */; };
 		AC46F81D1CA1F4C5002D94AA /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC46F81B1CA1F4C5002D94AA /* Map.swift */; };
 		AC46F81E1CA1F4C5002D94AA /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC46F81C1CA1F4C5002D94AA /* Marker.swift */; };
 		ACC8CA181CA1FEED00BCC7B8 /* AddMarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC8CA171CA1FEED00BCC7B8 /* AddMarkerViewController.swift */; };
@@ -72,6 +73,7 @@
 		AB0F1B711C9B688E00C8126B /* MapListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListTableViewController.swift; sourceTree = "<group>"; };
 		AB651D1E1C9B7C0500312A93 /* MapListView1TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListView1TableViewController.swift; sourceTree = "<group>"; };
 		AB651D201C9B7C1300312A93 /* MapListView2TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListView2TableViewController.swift; sourceTree = "<group>"; };
+		AC1FF48B1CAB2F7A002582DD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AC46F81B1CA1F4C5002D94AA /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		AC46F81C1CA1F4C5002D94AA /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		ACC8CA171CA1FEED00BCC7B8 /* AddMarkerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMarkerViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				ACDD37A31C9B705E00FA5518 /* Firebase.framework in Frameworks */,
 				ACDD379F1C9B6FCA00FA5518 /* Security.framework in Frameworks */,
 				ACDD379D1C9B6FC200FA5518 /* CFNetwork.framework in Frameworks */,
+				AC1FF48C1CAB2F7A002582DD /* MapKit.framework in Frameworks */,
 				B36C2F281CA740490014EE13 /* Realm.framework in Frameworks */,
 				ACDD379B1C9B6FAF00FA5518 /* libc++.tbd in Frameworks */,
 				B36C2F2C1CA740620014EE13 /* RealmSwift.framework in Frameworks */,
@@ -137,6 +140,7 @@
 		ACDA41011C98CA690076B407 = {
 			isa = PBXGroup;
 			children = (
+				AC1FF48B1CAB2F7A002582DD /* MapKit.framework */,
 				B36C2F2B1CA740620014EE13 /* RealmSwift.framework */,
 				B36C2F271CA740490014EE13 /* Realm.framework */,
 				ACDD37A21C9B705E00FA5518 /* Firebase.framework */,
@@ -283,6 +287,11 @@
 				TargetAttributes = {
 					ACDA41091C98CA690076B407 = {
 						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					ACDA411D1C98CA690076B407 = {
 						CreatedOnToolsVersion = 7.2;

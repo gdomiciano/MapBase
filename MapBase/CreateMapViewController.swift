@@ -10,7 +10,7 @@ import UIKit
 
 import RealmSwift
 
-class CreateMapViewController: UIViewController {
+class CreateMapViewController: UIViewController, UITextFieldDelegate {
     
     
     
@@ -25,6 +25,7 @@ class CreateMapViewController: UIViewController {
     
     @IBAction func createMap(sender: UIButton) {
         let map: Map =  Map()
+        self.mapName.delegate = self
         map.name = mapName.text!
         map.id = NSUUID().UUIDString
         switch (typeSegmented.selectedSegmentIndex) {
@@ -52,6 +53,11 @@ class CreateMapViewController: UIViewController {
     }
     
     
+    
+   func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    return true
+    }
     
     
 

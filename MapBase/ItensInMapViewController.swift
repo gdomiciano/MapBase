@@ -50,14 +50,14 @@ class ItensInMapViewController: UIViewController, CLLocationManagerDelegate {
         longPress.minimumPressDuration = 1.0
         
         self.mapItensView.addGestureRecognizer(longPress)
-        
+        locationManager.delegate = self
         if(CLLocationManager.locationServicesEnabled()){
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
            self.mapItensView.showsUserLocation = true
             print(locationManager.location?.coordinate)
             let locValue:CLLocationCoordinate2D = locationManager.location!.coordinate
             
-            let userLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(locValue.latitude, locValue.longitude)
+           let userLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(locValue.latitude, locValue.longitude)
             
             //Regiao a partir do usuario
             
@@ -160,8 +160,7 @@ class ItensInMapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    
-    
+  
     
     
         
