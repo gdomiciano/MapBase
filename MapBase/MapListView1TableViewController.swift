@@ -12,7 +12,7 @@ import MapKit
 
 class MapListView1TableViewController: UITableViewController, MKMapViewDelegate {
     
-    var arrayMapTeste: [String] = []
+    var arrayMapTeste: [[String: AnyObject]] = [[String:AnyObject]]()
     
     var firebaseRef = Firebase(url:"https://boiling-fire-3533.firebaseio.com")
     
@@ -31,7 +31,7 @@ class MapListView1TableViewController: UITableViewController, MKMapViewDelegate 
         publicMapsRef.observeEventType(.ChildAdded, withBlock: { snapshot in
             if let dic = snapshot.value as? [String: AnyObject] {
                 if let nome = dic["name"] as? String {
-                    self.arrayMapTeste.append(nome)
+                    self.arrayMapTeste.append(["name":nome, "key": snapshot.key, "snapshot": dic])
                 }
                 if let mapMarkers = dic["markers"] as? [Int] {
                     //print(mapMarkers)
@@ -65,6 +65,8 @@ class MapListView1TableViewController: UITableViewController, MKMapViewDelegate 
             
         })
     }
+    
+    
     
     func saveMaps() {
         let markers: [Int] = [0, 1]
@@ -105,11 +107,39 @@ class MapListView1TableViewController: UITableViewController, MKMapViewDelegate 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("CellId", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel?.text = self.arrayMapTeste[indexPath.row]
+        cell.textLabel?.text = self.arrayMapTeste[indexPath.row]["name"] as! String
         return cell
     }
 
     
+    
+    
+    //Clicando na celula da tabela - Ira para o itens do map
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //var map: Map = indexPath.row as! Map
+        //selectedMapID = map.id
+        performSegueWithIdentifier("publicToMapSegue", sender: indexPath)
+        
+    }
+    
+    
+    
+  
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "publicToMapSegue"){
+            let row = (sender as! NSIndexPath).row; //we know that sender is an NSIndexPath here.
+            let values = arrayMapTeste[row]["snapshot"] as! [String: AnyObject]
+            var iv: ItensInMapViewController = segue.destinationViewController as! ItensInMapViewController
+            iv.isFromPublic = true
+            iv.publicMap = values
+            
+            
+        }
+        
+        
+    }
+
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

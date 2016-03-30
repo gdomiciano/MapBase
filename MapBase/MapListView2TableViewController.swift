@@ -171,6 +171,7 @@ class MapListView2TableViewController: UITableViewController {
             let map = maps![row] as! Map
             var iv: ItensInMapViewController = segue.destinationViewController as! ItensInMapViewController
             iv.idMap = map.id
+            iv.isFromPublic = false
             
             
         }

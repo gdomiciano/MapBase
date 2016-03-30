@@ -64,16 +64,16 @@
                     </mapView>
                     <navigationItem key="navigationItem" id="8vC-Zm-Ftt">
                         <rightBarButtonItems>
-                            <barButtonItem image="add" id="4GQ-Vl-IrQ">
+                            <barButtonItem image="public" id="FJ0-r6-Vqa">
                                 <connections>
-                                    <segue destination="QNq-yg-TEd" kind="show" identifier="mapToAddMarkerSegue" id="ap6-le-OD9"/>
+                                    <action selector="turnMapToPublic:" destination="rh9-hr-A9C" id="x9L-YQ-Ikc"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="search" id="4BP-Xr-HA7"/>
-                            <barButtonItem image="favourite" id="Gg0-w6-u9B"/>
-                            <barButtonItem enabled="NO" image="list" id="FJ0-r6-Vqa">
+                            <barButtonItem enabled="NO" image="search" id="4BP-Xr-HA7"/>
+                            <barButtonItem enabled="NO" image="favourite" id="Gg0-w6-u9B"/>
+                            <barButtonItem enabled="NO" image="add" id="4GQ-Vl-IrQ">
                                 <connections>
-                                    <segue destination="8sG-Va-g90" kind="show" identifier="mapToMapListSegue" id="YJ1-xQ-rRQ"/>
+                                    <segue destination="QNq-yg-TEd" kind="show" identifier="mapToAddMarkerSegue" id="ap6-le-OD9"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -363,15 +363,15 @@
             <objects>
                 <tableViewController title="Itens in List" id="8sG-Va-g90" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SvZ-cu-903">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="u05-U7-FAa">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u05-U7-FAa" id="K8L-Ls-R8W">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -567,7 +567,6 @@
         <image name="home-hover" width="25" height="25"/>
         <image name="info" width="25" height="25"/>
         <image name="info-hover" width="25" height="25"/>
-        <image name="list" width="22" height="22"/>
         <image name="map" width="22" height="22"/>
         <image name="public" width="25" height="25"/>
         <image name="public-hover" width="25" height="25"/>

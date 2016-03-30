@@ -9,22 +9,33 @@
 import UIKit
 
 import RealmSwift
-
+import Firebase
 
 import MapKit
 
 class ItensInMapViewController: UIViewController, CLLocationManagerDelegate {
     
+    var firebaseRef = Firebase(url:"https://boiling-fire-3533.firebaseio.com")
     
+    var publicMapsRef = Firebase(url:"https://boiling-fire-3533.firebaseio.com/publicMaps")
+    var markersRef = Firebase(url:"https://boiling-fire-3533.firebaseio.com/markers")
+    var markers: [Int]?
     
     var map: Map = Map()
-    
+    var publicMap: [String: AnyObject]?
     
     //Vem da Segue
     var idMap: String!
     
+    var isFromPublic: Bool = false
+    
 
     @IBOutlet var mapItensView: MKMapView!
+    
+    
+    
+    
+    
     
     
     let locationManager:CLLocationManager = CLLocationManager()
@@ -42,45 +53,94 @@ class ItensInMapViewController: UIViewController, CLLocationManagerDelegate {
         
         self.locationManager.delegate = self
         
-        self.map = realm.objectForPrimaryKey(Map.self, key: idMap)!
-        print(idMap)
-        print (map.name)
-        let longPress: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "loongPress:")
-        longPress.allowableMovement = 10
-        longPress.minimumPressDuration = 1.0
         
-        self.mapItensView.addGestureRecognizer(longPress)
         locationManager.delegate = self
         if(CLLocationManager.locationServicesEnabled()){
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-           self.mapItensView.showsUserLocation = true
-            print(locationManager.location?.coordinate)
+            self.mapItensView.showsUserLocation = true
+            //print(locationManager.location?.coordinate)
             let locValue:CLLocationCoordinate2D = locationManager.location!.coordinate
             
-           let userLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(locValue.latitude, locValue.longitude)
+            let userLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(locValue.latitude, locValue.longitude)
             
             //Regiao a partir do usuario
             
             self.mapItensView.region =  MKCoordinateRegionMakeWithDistance(userLocation, 1200, 1200)
-
+            
             
         }
         
-        putAnnotationsFromDatabase()
+        
+        
+        
+        if(!isFromPublic ){
+            self.map = realm.objectForPrimaryKey(Map.self, key: idMap)!
+            
+            print(idMap)
+            print (map.name)
+            
+            let longPress: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "loongPress:")
+            longPress.allowableMovement = 10
+            longPress.minimumPressDuration = 1.0
+            
+            self.mapItensView.addGestureRecognizer(longPress)
+             putAnnotationsFromDatabase()
+        }else{
+            putAnnotationsFromJSON()
+        }
+        
+        
+       
+        
+        
+        
+        
+        
+       
         
     }
     
     
+    
+   var markerArrayFirebase: Marker = Marker()
+    
+    func putAnnotationsFromJSON(){
+    self.mapItensView.removeAnnotations(self.mapItensView.annotations)
+        
+        
+        if let mapMarkers = publicMap!["markers"] as? [[String: AnyObject]] {
+            
+            for marker in mapMarkers{
+                if let lat = marker["lat"] as? Double {
+                    print(marker["lat"])
+                    print (marker)
+                    if let  lon = marker["lon"] as? Double{
+                        let coordenada: CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat , lon)
+                        let annot: MapMarker = MapMarker(coordinate: coordenada, title: marker["name"] as! String, subtitle:  marker["address"] as! String, id: "")
+                        self.mapItensView.addAnnotation(annot)
+                    }
+                }
+                
+                
+            }
+            
+            
+        }
+    
+    }
+    
+    
     override func viewWillAppear(animated: Bool) {
-        putAnnotationsFromDatabase()
+        if(!self.isFromPublic){
+        self.putAnnotationsFromDatabase()
+        }
     }
     
     
     
     func putAnnotationsFromDatabase() -> Void{
-        self.mapItensView.removeAnnotations(self.mapItensView.annotations)
-        
         if(!map.markers.isEmpty){
+            self.mapItensView.removeAnnotations(self.mapItensView.annotations)
             for marker in map.markers{
                 let coordenada: CLLocationCoordinate2D = CLLocationCoordinate2DMake(marker.lat,marker.lon)
 
@@ -176,7 +236,12 @@ class ItensInMapViewController: UIViewController, CLLocationManagerDelegate {
                     anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
                     anView!.image = UIImage(named: "marker")
                     anView!.canShowCallout = true
+                    
+                    if(!isFromPublic){
                     anView!.rightCalloutAccessoryView = UIButton(type: UIButtonType.DetailDisclosure)
+                        
+                    }
+                    
                 }
                 return anView
             }
@@ -201,6 +266,48 @@ class ItensInMapViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
+    
+    @IBAction func turnMapToPublic(sender: UIBarButtonItem){
+        /* let json: [String: Any?] = ["id": map.id, "name": map.name,
+            "markers": [
+        ]*/
+        
+        var markersArray: [[String:AnyObject]] = [[String: AnyObject]]()
+        
+        for marker in map.markers{
+            let mapMarkerJson: [String: AnyObject] =   ["name": marker.name,
+                "address": marker.address,
+                "lat": marker.lat,
+                "lon": marker.lon ]
+            markersArray.append(mapMarkerJson)
+        }
+        
+        
+        
+        /*
+        let mapMarkersJson: [String: AnyObject] =
+        ["name": map.markers[0].name,
+            "address": map.markers[0].address,
+            "lat": map.markers[0].lat,
+            "lon": map.markers[0].lon ]
+        
+        
+        let mapMarkersJson2: [String: AnyObject] =
+        ["name": map.markers[1].name,
+            "address": map.markers[1].address,
+            "lat": map.markers[1].lat,
+            "lon": map.markers[1].lon ]
+        */
+        
+       // var markersArray = [mapMarkersJson, mapMarkersJson2]
+        
+        
+        let mapJson: [String: AnyObject] = ["name": map.name, "markers": markersArray]
+
+        let postRef = publicMapsRef.childByAutoId()
+        postRef.setValue(mapJson)
+        
+    }
     
     
     
